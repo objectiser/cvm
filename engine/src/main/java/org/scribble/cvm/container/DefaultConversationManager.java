@@ -25,7 +25,6 @@ public class DefaultConversationManager implements ConversationManager {
 
 	private java.util.Map<Key, Conversation> _conversations=new java.util.HashMap<Key, Conversation>();
 	
-	@Override
 	public Conversation createConversation(ConversationId cid,
 					Participant participant, java.util.Map<String,Object> vars) {
 		Conversation ret=new DefaultConversation(participant,
@@ -36,12 +35,10 @@ public class DefaultConversationManager implements ConversationManager {
 		return(ret);
 	}
 	
-	@Override
 	public Conversation getConversation(ConversationId cid, Participant participant) {
 		return(_conversations.get(new Key(cid, participant)));
 	}
 
-	@Override
 	public void removeConversation(ConversationId cid, Participant participant) {
 		_conversations.remove(new Key(cid, participant));
 	}

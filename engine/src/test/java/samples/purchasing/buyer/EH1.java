@@ -29,14 +29,12 @@ public class EH1 implements EventHandler {
 		return(INSTANCE);
 	}
 
-	@Override
 	public boolean canHandle(Message mesg) {
 		return (EH2.getInstance().canHandle(mesg)
 				|| EH3.getInstance().canHandle(mesg)
 				|| EH4.getInstance().canHandle(mesg));
 	}
 	
-	@Override
 	public void onMessage(ConversationContext context, Conversation session, Message mesg) {
 		
 		// How to handle non-directed choice - so we don't necessarily know

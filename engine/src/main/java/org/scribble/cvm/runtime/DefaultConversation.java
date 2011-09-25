@@ -40,17 +40,14 @@ public class DefaultConversation implements Conversation {
 		return(_localParticipant);
 	}
 	
-	@Override
 	public Participant getRemoteParticipant(String role) {
 		return (_remoteParticipants.get(role));
 	}
 
-	@Override
 	public void addRemoteParticipant(String role, Participant p) {
 		_remoteParticipants.put(role, p);
 	}
 	
-	@Override
 	public void removeRemoteParticipant(String role) {
 		_remoteParticipants.remove(role);
 	}

@@ -31,12 +31,10 @@ public class EH3 implements EventHandler {
 		return(INSTANCE);
 	}
 
-	@Override
 	public boolean canHandle(Message mesg) {
 		return (mesg.getContent() instanceof OutOfStock);
 	}
 	
-	@Override
 	public void onMessage(ConversationContext context, Conversation session, Message mesg) {
 		System.out.println("RECEIVED OUT OF STOCK");
 	}

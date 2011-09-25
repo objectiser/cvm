@@ -35,12 +35,10 @@ public class EH1 implements EventHandler {
 		return(INSTANCE);
 	}
 
-	@Override
 	public boolean canHandle(Message mesg) {
 		return (mesg.getContent() instanceof Order);
 	}
 	
-	@Override
 	public void onMessage(ConversationContext context, Conversation conversation, Message mesg) {
 		
 		// Store message source as buyer role

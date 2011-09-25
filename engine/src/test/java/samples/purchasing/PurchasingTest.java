@@ -358,7 +358,6 @@ public class PurchasingTest {
 
 		private java.util.List<Message> _messages=new java.util.Vector<Message>();
 		
-		@Override
 		public void send(Conversation conversation, Message mesg) {
 			_messages.add(mesg);
 		}
@@ -371,12 +370,10 @@ public class PurchasingTest {
 			_messages.clear();
 		}
 
-		@Override
 		public Participant findParticipant(String name, Properties props) {
 			return null;
 		}
 
-		@Override
 		public Participant findParticipant(String role) {
 			// TODO Auto-generated method stub
 			return null;

@@ -36,13 +36,11 @@ public class EH2 implements EventHandler {
 		return(INSTANCE);
 	}
 
-	@Override
 	public boolean canHandle(Message mesg) {
 		return (mesg.getContent() instanceof CreditOk
 				|| mesg.getContent() instanceof InsufficientCredit);
 	}
 	
-	@Override
 	public void onMessage(ConversationContext context, Conversation conversation, Message mesg) {
 		Participant buyer=conversation.getRemoteParticipant("purchasing.Buyer");
 		

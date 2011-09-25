@@ -34,12 +34,10 @@ public class EH1 implements EventHandler {
 		return(INSTANCE);
 	}
 
-	@Override
 	public boolean canHandle(Message mesg) {
 		return (mesg.getContent() instanceof CreditCheck);
 	}
 	
-	@Override
 	public void onMessage(ConversationContext context, Conversation conversation, Message mesg) {
 		CreditCheck cc=(CreditCheck)mesg.getContent();
 		

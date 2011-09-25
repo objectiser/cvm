@@ -30,17 +30,14 @@ public class PurchasingSeller implements ConversationType {
 	private PurchasingSeller() {
 	}
 	
-	@Override
 	public String getRole() {
 		return ("purchasing.Seller");
 	}
 
-	@Override
 	public boolean canInitiate(Message mesg) {
 		return(mesg.getContent() instanceof Order);
 	}
 	
-	@Override
 	public void initialize(ConversationContext context, Conversation conversation) {
 		conversation.register(EH1.getInstance());
 	}

@@ -30,17 +30,14 @@ public class PurchasingCreditAgency implements ConversationType {
 	private PurchasingCreditAgency() {
 	}
 	
-	@Override
 	public String getRole() {
 		return ("purchasing.CreditAgency");
 	}
 
-	@Override
 	public boolean canInitiate(Message mesg) {
 		return(mesg.getContent() instanceof CreditCheck);
 	}
 	
-	@Override
 	public void initialize(ConversationContext context, Conversation conversation) {
 		conversation.register(EH1.getInstance());
 	}

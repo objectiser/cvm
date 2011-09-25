@@ -45,47 +45,38 @@ public class DefaultConversationEngine implements ConversationEngine {
 	public DefaultConversationEngine() {
 	}
 
-	@Override
 	public void setPrincipal(java.security.Principal principal) {
 		_principal = principal;
 	}
 	
-	@Override
 	public java.security.Principal getPrincipal() {
 		return (_principal);
 	}
 	
-	@Override
 	public void setConversationTypes(java.util.Set<ConversationType> conversationTypes) {
 		_conversationTypes = conversationTypes;
 	}
 	
-	@Override
 	public java.util.Set<ConversationType> getConversationTypes() {
 		return (_conversationTypes);
 	}
 
-	@Override
 	public void setMessagingLayer(MessagingLayer messaging) {
 		_messaging = messaging;
 	}
 
-	@Override
 	public void setConversationManager(ConversationManager conversationManager) {
 		_conversationManager = conversationManager;
 	}
 	
-	@Override
 	public void setParticipantRegistry(ParticipantRegistry registry) {
 		_participantRegistry = registry;
 	}
 	
-	@Override
 	public void setListener(ConversationEngineListener l) {
 		_listener = l;
 	}
 	
-	@Override
 	public void createConversation(ConversationId cid, ConversationType ctype,
 			java.util.Map<String,Object> vars) {
 		
@@ -103,7 +94,6 @@ public class DefaultConversationEngine implements ConversationEngine {
 		ctype.initialize(_context, conversation);
 	}
 	
-	@Override
 	public boolean process(Message mesg) {
 		boolean handled=false;
 		Conversation conversation=null;
@@ -172,7 +162,6 @@ public class DefaultConversationEngine implements ConversationEngine {
 	
 	public class ConversationEngineContext implements ConversationContext {
 
-		@Override
 		public void send(Conversation conversation, Message mesg) {
 			if (_listener != null) {
 				_listener.sending(conversation, mesg);
@@ -180,12 +169,10 @@ public class DefaultConversationEngine implements ConversationEngine {
 			_messaging.send(mesg);
 		}
 
-		@Override
 		public Participant findParticipant(String role, Properties props) {
 			return (_participantRegistry.findParticipant(role, props));
 		}
 
-		@Override
 		public Participant findParticipant(String role) {
 			return (new DefaultParticipant(role, _principal));
 		}
